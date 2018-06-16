@@ -1,11 +1,11 @@
 package gosseract
 
-// #if __FreeBSD__ >= 10
-// #cgo LDFLAGS: -L/usr/local/lib -llept -ltesseract
-// #else
-// #cgo CXXFLAGS: -std=c++0x
-// #cgo LDFLAGS: -llept -ltesseract
-// #endif
+// #cgo android CFLAGS: -I${SRCDIR}/include
+// #cgo android,arm LDFLAGS: -L${SRCDIR}/libs/armeabi-v7a -llept -ltess
+// #cgo android,386 LDFLAGS: -L${SRCDIR}/libs/x86 -llept -ltess -lm
+// #cgo linux,!android  pkg-config: tesseract lept
+// #cgo darwin pkg-config: tesseract lept
+// #cgo freebsd pkg-config: tesseract lept
 // #include <stdlib.h>
 // #include <stdbool.h>
 // #include "tessbridge.h"
