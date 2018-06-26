@@ -1,8 +1,8 @@
 package gosseract
 
 // #cgo android CFLAGS: -I${SRCDIR}/include
-// #cgo android,arm LDFLAGS: -L${SRCDIR}/libs/armeabi-v7a -llept -ltess
-// #cgo android,386 LDFLAGS: -L${SRCDIR}/libs/x86 -llept -ltess -lm
+// #cgo android,arm LDFLAGS: -L${SRCDIR}/libs/gnu-c++/armeabi-v7a -lsupc++ -lstdc++ -L${SRCDIR}/libs/tess/armeabi-v7a -llept -ltess
+// #cgo android,386 LDFLAGS: -L${SRCDIR}/libs/gnu-c++/x86 -lsupc++ -lstdc++ -L${SRCDIR}/libs/tess/x86 -llept -ltess -lm
 // #cgo linux,!android  pkg-config: tesseract lept
 // #cgo darwin pkg-config: tesseract lept
 // #cgo freebsd pkg-config: tesseract lept
